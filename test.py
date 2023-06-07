@@ -6,15 +6,14 @@ import pickle
 from keras_i3d import I3D
 import cv2
 from PIL import ImageFont, ImageDraw, Image  
+from two_stream_model import two_stream
 
 
 print(K.backend())
 
 
-model = I3D().model(classes = 261)
-
-model.load_weights(r'/home/nigar.alishzada/SLR/keras-kinetics-i3d/weights_all/weights-08-1.54.h5')
-
+model = two_stream()
+model.summary()
 
 #Video path to load
 video_path = r'/home/nigar.alishzada/SLR/keras-kinetics-i3d/2022-06-01 15-17-31.mp4'
